@@ -43,7 +43,7 @@ public class Usuario {
     
     private String endereco;
 
-    
+    S
     @PrePersist 
     @PreUpdate 
     protected void onUpdate() {
