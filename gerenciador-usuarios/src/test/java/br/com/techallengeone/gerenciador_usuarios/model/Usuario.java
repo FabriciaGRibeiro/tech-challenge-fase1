@@ -1,11 +1,11 @@
-package br.com.techallengeone.gerenciador_usuarios.model; 
+package br.com.techallengeone.gerenciador_usuarios.model;
 
 import java.time.LocalDateTime;
 
-import jakarta.persistence.Column;
+import jakarta.persistence.Column; 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
+import jakarta.persistence.GenerationType; 
 import jakarta.persistence.Id;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
@@ -14,37 +14,40 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
-@Table(name = "usuarios")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Entity 
+@Table(name = "usuarios") 
+@Data 
+@NoArgsConstructor 
+@AllArgsConstructor 
 public class Usuario {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id 
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false) 
     private String nome;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false, unique = true) 
     private String email;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false, unique = true) 
     private String login;
 
-    @Column(nullable = false)
-    private String senha;
+    @Column(nullable = false) 
+    private String senha; 
 
-    @Column(name = "data_ultima_alteracao")
+    @Column(name = "data_ultima_alteracao") 
     private LocalDateTime dataUltimaAlteracao;
 
+   
     private String endereco;
 
-    @PrePersist
-    @PreUpdate
+
+    @PrePersist 
+    @PreUpdate 
     protected void onUpdate() {
+        
         this.dataUltimaAlteracao = LocalDateTime.now();
     }
 }
