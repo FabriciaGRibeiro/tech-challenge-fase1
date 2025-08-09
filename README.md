@@ -12,7 +12,7 @@ Este projeto é a Fase 2 do Tech Challenge, focada na expansão de um sistema de
 
 ## Tecnologias Utilizadas
 
-- Java 17
+- Java 21
 - Spring Boot 3.2.5
 - Maven
 - Banco de Dados: PostgreSQL
